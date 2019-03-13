@@ -6,4 +6,9 @@ node() {
         def scmVars = checkout scm
         def commitHash = scmVars.GIT_COMMIT
     }
+    
+    stage('test-npm') {
+        npm install
+        npm test
+    }
 }
