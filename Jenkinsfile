@@ -17,8 +17,8 @@ podTemplate(label: label, containers: [
 
         stage('node') {
                     container('npm') {
-                      npm install
-                      npm test
+                       sh('npm install')
+                       sh('npm test')
                     }
         }
 
