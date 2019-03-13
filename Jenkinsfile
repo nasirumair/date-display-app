@@ -7,8 +7,13 @@ node() {
         def commitHash = scmVars.GIT_COMMIT
     }
     
-    stage('test-npm') {
-        npm install
-        npm test
+    def environment = docker.build 'node:carbon-jessie'
+    
+    environment.inside {
+        stage('test-npm') {
+            npm install
+            npm test
+        }
     }
+
 }
