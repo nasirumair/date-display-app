@@ -42,7 +42,9 @@ volumes: [
     }
     stage('Run kubectl') {
       container('kubectl') {
-        sh "kubectl run PLEASE_DEPLOY --image=nasirumair/my-image"
+       // sh "kubectl run PLEASE_DEPLOY --image=nasirumair/my-image"
+                sh "kubectl get pods"
+
       }
     }
   }
