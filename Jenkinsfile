@@ -42,7 +42,7 @@ volumes: [
     }
     stage('Run kubectl') {
       container('kubectl') {
-       sh "kubectl run PLEASE_DEPLOY --image=nasirumair/my-image --service-account=jenkins-team7:jenkins-team7"
+       sh "kubectl run PLEASE_DEPLOY --image=nasirumair/my-image --serviceaccount=jenkins-team7:jenkins-team7"
 
       }
     }
