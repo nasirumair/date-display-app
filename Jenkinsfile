@@ -34,8 +34,8 @@ volumes: [
           passwordVariable: 'DOCKER_HUB_PASSWORD']]) {
           sh """
             docker login -u ${DOCKER_HUB_USER} -p ${DOCKER_HUB_PASSWORD}
-            docker build -t nasirumair/namespace/my-image .
-            docker push nasirumair/namespace/my-image
+            docker build -t nasirumair/my-image .
+            docker push nasirumair/my-image
             """
         }
       }
