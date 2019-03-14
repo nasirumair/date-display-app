@@ -40,7 +40,10 @@ volumes: [
         }
       }
     }
-    
-
+    stage('Run kubectl') {
+      container('kubectl') {
+        sh "kubectl run PLEASE_DEPLOY --image=nasirumair/my-image"
+      }
+    }
   }
 }
